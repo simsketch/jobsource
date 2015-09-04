@@ -40,8 +40,9 @@ i18n.t = function (str, options) {
   }
 };
 
-Mongo.Collection.prototype.internationalize = function(){
-  var schema = this.simpleSchema()._schema;
+SimpleSchema.prototype.internationalize = function () {
+  var schema = this._schema;
+
   _.each(schema, function (property, key) {
     if (!property.label) {
       schema[key].label = function () {

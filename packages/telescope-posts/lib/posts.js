@@ -226,10 +226,7 @@ Posts.schema = new SimpleSchema({
 });
 
 // schema transforms
-Meteor.startup(function(){
-  // needs to happen after every fields were added
-  Posts.internationalize();
-});
+Posts.schema.internationalize();
 
 /**
  * Attach schema to Posts collection
